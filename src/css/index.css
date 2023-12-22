@@ -1,0 +1,157 @@
+@font-face {
+    font-family: inter;
+    src: url(../fonts/inter/Inter-Regular.ttf);
+}
+
+body {
+    font-family: inter;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+.background_image {
+    border: 0;
+    width: 50%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    background-color: #f5f5f5;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.4s ease-in-out;
+}
+
+.box.shifted {
+    transform: translateX(-100%);
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.signUp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.apresentacao {
+    color: #BC4133;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 2.4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.apresentacao span {
+    font-weight: 600;
+}
+
+h1 {
+    color: #BC4133;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3.6px;
+    margin: 40px 0 20px 0;
+    font-weight: 600;
+    font-size: 36px;
+}
+
+.mensagemErroLogin, .mensagemErroCadastroSenha, .mensagemErroCadastroEmail, .mensagemErroCadastroDuplicado {
+    color: #BC4133;
+    text-align: center;
+    display: none;
+}
+
+.loginCadastroItens {
+    display: flex;
+    flex-direction: column;
+    gap: 51px;
+}
+
+.signUp, .loginCadastroItens {
+    gap: 24px;
+}
+
+.signUp {
+    display: none;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inputs label {
+    color: #BC4133;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.inputs input {
+    padding: 11px 15px;
+    background-color: #f5f5f5;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+    width: 511px;
+}
+
+.fa, .fa-eye {
+    position: absolute;
+    color:#BC4133;
+    transform: translate(3250%, 265%);
+    cursor: pointer;
+}
+
+.botaoLoginCadastro {
+    background-color: #BC4133;
+    color: #f5f5f5;
+    border: none;
+    padding: 17.5px 220.5px;
+    font-size: 22px;
+    border-radius: 20px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+.botaoLoginCadastro:active {
+    background-color: #913329;
+    color: #f5f5f5;
+}
+
+.botaoCadastrar {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #A0A0A0;
+    width: fit-content;
+    align-self: center;
+}
+
+.botaoCadastrar span {
+    color: #BC4133;
+}
