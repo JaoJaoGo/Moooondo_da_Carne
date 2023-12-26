@@ -9,50 +9,12 @@ body {
     background-color: #f5f5f5;
 }
 
-.container {
-    overflow: hidden;
-    position: relative;
-    display: flex;
-}
-
-.background_image {
-    border: 0;
-    width: 50%;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-}
-
-.box {
-    background-color: #f5f5f5;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.4s ease-in-out;
-}
-
-.box.shifted {
-    transform: translateX(-100%);
-}
-
-.login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 60px;
-}
-
 .signUp {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 
 .apresentacao {
@@ -95,47 +57,10 @@ h1 {
     gap: 24px;
 }
 
-.signUp {
-    display: none;
-}
-
-.inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
 .inputs label {
     color: #BC4133;
     font-size: 20px;
     font-weight: 500;
-}
-
-.inputs input {
-    padding: 11px 15px;
-    background-color: #f5f5f5;
-    outline: none;
-    border: none;
-    border-bottom: 2px solid black;
-    width: 511px;
-}
-
-.fa, .fa-eye {
-    position: absolute;
-    color:#BC4133;
-    transform: translate(3250%, 265%);
-    cursor: pointer;
-}
-
-.botaoLoginCadastro {
-    background-color: #BC4133;
-    color: #f5f5f5;
-    border: none;
-    padding: 17.5px 220.5px;
-    font-size: 22px;
-    border-radius: 20px;
-    letter-spacing: 1.5px;
-    cursor: pointer;
 }
 
 .botaoLoginCadastro:active {
@@ -154,4 +79,151 @@ h1 {
 
 .botaoCadastrar span {
     color: #BC4133;
+}
+
+/* Estilos para dispositivos desktop */
+@media only screen and (min-width: 850px) {
+    /* Estilos para dispositivos com largura de tela maior que 600px */
+    .container {
+        overflow: hidden;
+        position: relative;
+        display: flex;
+    }
+    
+    .background_image {
+        border: 0;
+        width: 50%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+
+    .logo_mobile {
+        display: none;
+    }
+    
+    .box {
+        background-color: #f5f5f5;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.4s ease-in-out;
+    }
+    
+    .box.shifted {
+        transform: translateX(-100%);
+    }
+    
+    .login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 60px;
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .inputs input {
+        padding: 11px 15px;
+        background-color: #f5f5f5;
+        outline: none;
+        border: none;
+        border-bottom: 2px solid black;
+        width: 34dvw;
+    }
+    
+    .fa, .fa-eye {
+        position: absolute;
+        color:#BC4133;
+        transform: translate(34.5dvw, 265%);
+        cursor: pointer;
+    }
+    
+    .botaoLoginCadastro {
+        background-color: #BC4133;
+        color: #f5f5f5;
+        border: none;
+        padding: 17.5px 10dvw;
+        font-size: 22px;
+        border-radius: 20px;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+    }
+}
+
+/* Estilos para dispositivos móveis */
+@media only screen and (max-width: 850px) {
+    /* Estilos para dispositivos com largura de tela até 600px (versão mobile) */
+    body {
+        position: relative;
+        display: flex;
+    }
+
+    .background_image {
+        display: none;
+    }
+
+    .box {
+        background-color: #f5f5f5;
+        width: 100dvw;
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5dvh;
+    }
+
+    .apresentacao {
+        margin-top: 5dvh;
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .inputs input {
+        padding: 11px 15px;
+        background-color: #f5f5f5;
+        outline: none;
+        border: none;
+        border-bottom: 2px solid black;
+        width: 65dvw;
+    }
+
+    .fa, .fa-eye {
+        position: absolute;
+        color:#BC4133;
+        transform: translate(67dvw, 265%);
+        cursor: pointer;
+    }
+
+    .botaoLoginCadastro {
+        background-color: #BC4133;
+        color: #f5f5f5;
+        border: none;
+        padding: 17.5px 20dvw;
+        font-size: 22px;
+        border-radius: 20px;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+    }
 }
