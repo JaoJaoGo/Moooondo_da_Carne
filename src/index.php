@@ -97,6 +97,8 @@ if(isset($_POST['botaocadastro'])) {
         <img class="background_image" src="./img/background/signUpImage.jpg">
 
         <main class="box">
+            <img class="logo_mobile" src="./img/Logo.png">
+
             <p class="apresentacao">Bem-vindo ao <br><span>Moooondo da Carne</span></p>
             
             <form action = '' method="POST">
