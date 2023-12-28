@@ -1,6 +1,7 @@
 <?php
 include('php/config.php');
 
+// Verifica se o que foi digitado nos inputs de e-mail é um e-mail válido
 function ValidaEmail($Email) {
     if(filter_var($Email, FILTER_VALIDATE_EMAIL)) {
         return true;
@@ -9,6 +10,7 @@ function ValidaEmail($Email) {
     }
 }
 
+// Sistema de Login, é ativado ao clicar no botão de login
 if(isset($_POST['botaologin'])) {
     $emaillogin = $mysqli->real_escape_string($_POST['emaillogin']);
     $senhalogin = $mysqli->real_escape_string($_POST['senhalogin']);
@@ -16,19 +18,24 @@ if(isset($_POST['botaologin'])) {
     $sql_code = "SELECT * FROM usuarios WHERE email = '$emaillogin' LIMIT 1";
     $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
     
+    // Verifica se existe uma conta que utiliza o e-mail digitado no input de e-mail
     $quantidade = $sql_query->num_rows;
     
     if($quantidade == 1) {
+        // Recebe os dados do usuário
         $usuario = $sql_query->fetch_assoc();
 
+        // Verifica se a senha digitada no input de senha é a mesma do banco de dados
         if(password_verify($senhalogin, $usuario['senha'])) {
+            // Inicia uma sessão
             if(!isset($_SESSION)) {
                 session_start();
             }
         
             $_SESSION['id'] = $usuario['id'];
             $_SESSION['nome'] = $usuario['nome'];
-        
+            
+            // Realiza o login com sucesso!
             header("Location: php/home.php");
         } else {
             echo '<script>var erroLogin = true; </script>';
@@ -38,31 +45,33 @@ if(isset($_POST['botaologin'])) {
     }
 }
 
+// Sistema de Cadastro, é ativado ao clicar no botão de cadastro 
 if(isset($_POST['botaocadastro'])) {
     $nome = $_POST['nome'];
     $email = $_POST['emailcadastro'];
     $senha = $_POST['senhacadastro'];
     $senha_confirm = $_POST['senhacadastroconfirm'];
     
+    // Verifica se o e-mail digitado é válido
     if(ValidaEmail($email)) {
+        // Busca no database se já existe uma conta com o mesmo e-mail, caso não, o cadastro irá prosseguir, caso sim, dará erro
         $checar_email_code = "SELECT * FROM usuarios WHERE email = '$email' LIMIT 1";
         $checar_email_query = $mysqli->query($checar_email_code) or die("Falha na execução do código SQL: " . $mysqli->error);
 
         $quantidade_de_emails = $checar_email_query->num_rows;
 
         if($quantidade_de_emails == 0) {
+            // Verifica se as uas senhas digitadas são iguais
             if($senha === $senha_confirm) {
-                // Utilizando instrução preparada
                 $stmt = $mysqli->prepare("INSERT INTO usuarios(nome, email, senha) VALUES (?, ?, ?)");
                 $stmt->bind_param("sss", $nome, $email, $hash);
         
-                // Hash da senha
+                // Criptografa a senha usando BCRYPT
                 $hash = password_hash($senha, PASSWORD_BCRYPT);
-        
-                // Executar a instrução preparada
+                
+                // Realiza o cadastro do usuário, inserindo seus dados no banco de dados
                 $stmt->execute();
         
-                // Fechar a instrução
                 $stmt->close();
             } else {
                 echo '<script>var erroCadastroSenha = true; </script>';
