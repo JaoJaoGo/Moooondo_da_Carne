@@ -45,6 +45,7 @@ h1 {
     color: #BC4133;
     text-align: center;
     display: none;
+    width: auto;
 }
 
 .loginCadastroItens {
@@ -83,7 +84,7 @@ h1 {
 
 /* Estilos para dispositivos desktop */
 @media only screen and (min-width: 850px) {
-    /* Estilos para dispositivos com largura de tela maior que 600px */
+    /* Estilos para dispositivos com largura de tela maior que 850px */
     .container {
         overflow: hidden;
         position: relative;
@@ -124,10 +125,11 @@ h1 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-top: 60px;
+        padding-top: 9dvh;
     }
 
     .inputs {
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -145,7 +147,8 @@ h1 {
     .fa, .fa-eye {
         position: absolute;
         color:#BC4133;
-        transform: translate(34.5dvw, 265%);
+        right: 0.5dvw;
+        top: 65%;
         cursor: pointer;
     }
     
@@ -163,12 +166,7 @@ h1 {
 
 /* Estilos para dispositivos móveis */
 @media only screen and (max-width: 850px) {
-    /* Estilos para dispositivos com largura de tela até 600px (versão mobile) */
-    body {
-        position: relative;
-        display: flex;
-    }
-
+    /* Estilos para dispositivos com largura de tela até 850px (versão mobile) */
     .background_image {
         display: none;
     }
@@ -187,7 +185,6 @@ h1 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-top: 5dvh;
     }
 
     .apresentacao {
@@ -195,6 +192,7 @@ h1 {
     }
 
     .inputs {
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: 2px;
@@ -212,7 +210,8 @@ h1 {
     .fa, .fa-eye {
         position: absolute;
         color:#BC4133;
-        transform: translate(67dvw, 265%);
+        right: 0.5dvw;
+        top: 65%;
         cursor: pointer;
     }
 
