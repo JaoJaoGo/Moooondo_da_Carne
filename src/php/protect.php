@@ -1,4 +1,6 @@
 <?php
+// Verifica a sessão, caso usuário esteja logado, poderá acessar a página, caso não, deverá voltar a página de login
+
 if(!isset($_SESSION)) {
     session_start();
 }

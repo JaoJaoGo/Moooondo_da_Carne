@@ -1,6 +1,7 @@
 <?php
 include('protect.php');
 
+// Ao clicar no botão de logout, finaliza a sessão e envia o usuário ao site de login
 if(isset($_POST['logout'])) {
     session_destroy();
 
