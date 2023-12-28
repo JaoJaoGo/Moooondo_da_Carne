@@ -1,8 +1,5 @@
+// Função responsável por mostrar os erros ao usuário
 $(document).ready(function () {
-    mensagemErro();
-});
-
-function mensagemErro() {
     if(typeof erroLogin !== 'undefined' && erroLogin) {
         var erroL = $(".mensagemErroLogin");
         erroL.fadeIn("fast");
@@ -25,8 +22,9 @@ function mensagemErro() {
         erroCD.fadeIn("fast");
         toggleLogin();
     }
-}
+});
 
+// Faz a troca de inputs de login e cadastro, e suas animações
 function toggleLogin() {
     var box = $(".box");
     var login = $(".login");
@@ -49,6 +47,7 @@ function toggleLogin() {
     }
 }
 
+// Função responsável por mostrar ou esconder a senha digitada ao usuário caso ela clicar no olho (fa-eye)
 function trocarSenha(idInput, idIcon) {
     const passwordInput = document.getElementById(idInput);
     const eyeIcon = document.getElementById(idIcon);
