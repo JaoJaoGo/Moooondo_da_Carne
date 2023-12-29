@@ -1,3 +1,4 @@
+/* Fontes */
 @font-face {
     font-family: inter;
     src: url(../fonts/inter/Inter-Regular.ttf);
@@ -10,6 +11,7 @@ html, body {
 }
 
 .container {
+    overflow: scroll;
     background-color: #f5f5f5;
     position: relative;
     align-items: center;
@@ -27,7 +29,7 @@ html, body {
 
 h1 {
     font-size: 175%;
-    letter-spacing: 3.6px
+    letter-spacing: 3.6px;
 }
 
 .textos p {
@@ -43,6 +45,7 @@ h1 {
     padding: 2dvh 5dvw;
     border-radius: 20px;
     margin-top: 3dvh;
+    margin-bottom: 1dvh;
     cursor: pointer;
 }
 
@@ -55,13 +58,13 @@ h1 {
     cursor: pointer;
 }
 
-/* Versão Desktop */
+/* Estilos para Desktop */
 @media only screen and (min-width: 850px) {
     .logo-image {
         width: 17dvw;
         margin-top: -13dvh;
     }
-    
+
     .container img {
         margin-bottom: 4dvh;
     }
@@ -73,7 +76,7 @@ h1 {
     }
 
     footer {
-        background-color: black;
+        overflow: visible;
         color: #f5f5f5;
         width: 100dvw;
         height: 10dvh;
@@ -87,7 +90,7 @@ h1 {
         letter-spacing: 3.6px;
         padding-right: 3.5dvw;
     }
-    
+
     .telEmail {
         display: flex;
         align-items: center;
@@ -95,13 +98,13 @@ h1 {
         padding-right: 3.3dvw;
         font-size: 15px;
     }
-    
+
     .telEmail img {
         margin-right: 0.5dvw;
     }
 }
 
-/* Versão mobile */
+/* Estilos para Mobile */
 @media only screen and (max-width: 850px) {
     .logo-image {
         margin-top: -25dvh;
@@ -118,7 +121,8 @@ h1 {
     }
 
     footer {
-        background-color: black;
+        overflow: visible;
+        position: relative;
         color: #f5f5f5;
         width: 100dvw;
         height: fit-content;
@@ -130,7 +134,7 @@ h1 {
         font-size: 120%;
         letter-spacing: 3.6px;
     }
-    
+
     .telEmail {
         display: flex;
         align-items: center;
@@ -140,7 +144,7 @@ h1 {
     .telEmail p {
         margin-top: 1dvh;
     }
-    
+
     .telEmail img {
         margin-right: 1dvw;
     }
