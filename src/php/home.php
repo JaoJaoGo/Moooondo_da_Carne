@@ -29,7 +29,7 @@ if(isset($_POST['logout'])) {
 
             <div class="textos">
                 <h1>Em manutenção!</h1>
-                <p>Olá <?php echo $_SESSION['nome'];?>! Nosso site está em manutenção.<br>Em breve voltaremos!</p>
+                <p>Olá <b><?php echo $_SESSION['nome'];?></b>! Nosso site está em manutenção.<br>Em breve voltaremos!</p>
             </div>
 
             <button type="submit" class="logout" name="logout">Voltar para o Login</button>
